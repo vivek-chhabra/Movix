@@ -1,22 +1,38 @@
-import React, { useEffect } from "react";
-import "./App.scss";
-import { fetchData } from "./utils/API";
-import { Route, Routes } from "react-router-dom";
-import Home from "./pages/home/Home";
+import { getApiConfiguration } from "./redux/slice/homeSlice";
+import { fetchApiConfig } from "./redux/slice/ApiConfigSlice";
 import MovieDetails from "./pages/movieDetails/MovieDetails";
 import SearchResult from "./pages/searchResult/SearchResult";
-import Explore from "./pages/explore/Explore";
+import { useDispatch, useSelector } from "react-redux";
 import PageNotFound from "./components/PageNotFound";
+import { Route, Routes } from "react-router-dom";
+import Explore from "./pages/explore/Explore";
 import Navbar from "./components/Navbar";
+import React, { useEffect } from "react";
+import Home from "./pages/home/Home";
+import "./App.scss";
 
 function App() {
-    // useEffect(() => {
-    //     const fetch = async () => {
-    //       const res = fetchData("/movie/popular");
-    //       console.log("res", res);
-    //     };
-    //     fetch()
-    // }, []);
+    // dispatch
+    const dispatch = useDispatch();
+
+    // fetching the apiConfig
+    useEffect(() => {
+        dispatch(fetchApiConfig({ url: "/configuration" }));
+    }, []);
+
+    // use selector
+    const { isPending, error, success, ApiConfig } = useSelector((data) => data.apiConfig);
+
+    useEffect(() => {
+        if (success) {
+            const url = {
+                backdrop: ApiConfig?.images.secure_base_url + "original",
+                poster: ApiConfig?.images.secure_base_url + "original",
+                profile: ApiConfig?.images.secure_base_url + "original",
+            };
+            dispatch(getApiConfiguration(url));
+        }
+    }, [ApiConfig]);
 
     return (
         <div className="App">

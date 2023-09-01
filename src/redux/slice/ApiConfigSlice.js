@@ -5,13 +5,13 @@ import { BASE_URL, headers } from "../../utils/API";
 // initial state
 const initialState = {
     isPending: false,
-    success: false,
     error: null,
-    movies: [],
+    success: false,
+    ApiConfig: {},
 };
 
 // createAsyncThunk
-export const fetchMovies = createAsyncThunk("movies/fetchMovies", async ({ url, params }, { getState, dispatch }) => {
+export const fetchApiConfig = createAsyncThunk("Config/fetchApiConfig", async ({ url, params }, { getState, dispatch }) => {
     const res = await axios(BASE_URL + url, {
         headers,
         params,
@@ -19,30 +19,30 @@ export const fetchMovies = createAsyncThunk("movies/fetchMovies", async ({ url, 
     return res;
 });
 
-// creating slice
-const moviesSlice = createSlice({
-    name: "movies",
+// create slice
+const ApiConfigSlice = createSlice({
+    name: "config",
     initialState,
     extraReducers: (builder) => {
-        builder.addCase(fetchMovies.pending, (state, action) => {
+        builder.addCase(fetchApiConfig.pending, (state, action) => {
             state.isPending = true;
             state.error = null;
             state.success = false;
         });
-        builder.addCase(fetchMovies.fulfilled, (state, action) => {
+        builder.addCase(fetchApiConfig.fulfilled, (state, action) => {
             state.isPending = false;
             state.success = true;
-            state.movies = action.payload.data;
+            state.ApiConfig = action.payload.data;
         });
-        builder.addCase(fetchMovies.rejected, (state, action) => {
+        builder.addCase(fetchApiConfig.rejected, (state, action) => {
             state.isPending = false;
             console.log(action.error.message);
             state.error = action.error.message;
             state.success = false;
-            state.movies = [];
+            state.ApiConfig = {};
         });
     },
 });
 
 // reducer
-export const moviesReducer = moviesSlice.reducer;
+export const apiConfigReducer = ApiConfigSlice.reducer;

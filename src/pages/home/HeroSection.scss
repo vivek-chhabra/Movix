@@ -1,0 +1,71 @@
+@import "../../styles/variables";
+
+.HeroSection {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    line-height: 100%;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.51);
+        z-index: 1;
+    }
+
+    .container {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 5.5rem;
+        font-size: 1.6rem;
+        color: $main-text;
+        z-index: 20;
+
+        .title {
+            font-size: 7.5rem;
+            font-weight: 600;
+        }
+
+        .msg {
+            color: $main-text;
+            font-size: 2.5rem;
+            font-size: 400 !important;
+        }
+
+        .search {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            input {
+                padding: 1.45rem 2.5rem;
+                max-width: 65rem !important;
+                width: 100%;
+                font-size: 2rem;
+                border-radius: 5rem 0 0 5rem;
+                outline: none;
+                border: none;
+            }
+
+            button {
+                padding: 2.1rem 4rem;
+                border-radius: 0 5rem 5rem 0;
+                border: none;
+                font-size: 2.2rem;
+                color: $main-text;
+                background: $gradient;
+                cursor: pointer;
+            }
+        }
+    }
+}
