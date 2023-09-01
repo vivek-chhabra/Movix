@@ -1,0 +1,57 @@
+@import "../styles/variables";
+
+.Navbar {
+    padding: 1rem;
+    font-size: 1.6rem;
+    background-color: rgba($secondary-bg, .7);
+    backdrop-filter: blur(.5rem);
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    top: 0;
+
+    .container {
+        justify-content: space-between;
+        align-items: center;
+
+        img:hover {
+            cursor: pointer;
+        }
+
+        .links {
+            gap: 3rem;
+            font-weight: 500;
+            color: white;
+
+            & > * {
+                padding-inline: 0.5rem;
+                padding-bottom: 0.5rem;
+
+                &:hover {
+                    color: lighten($pink, 30);
+                    &::before {
+                        width: 100%;
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0%;
+                    height: 3px;
+                    border-radius: 5px;
+                    background: $gradient;
+                    transition: all 0.3s ease;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                }
+            }
+
+            & > *:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

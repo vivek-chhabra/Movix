@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Comforter&family=Dancing+Script:wght@400;600&family=Diphylleia&family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,500&family=Inconsolata:wght@200;400;600&family=Lobster&family=Montserrat:wght@100;200;300;400&family=Mukta:wght@200;400&family=Noto+Serif:wght@300;400;500;600&family=Nunito:wght@200;300;400;700;900&family=Oswald:wght@200;400;600&family=Playfair:wght@300&family=Poppins:wght@300;400&family=Roboto+Condensed:wght@300;400&family=Rubik:wght@300;400&family=Tsukimi+Rounded:wght@300;400;500;600&family=Work+Sans:wght@100;200;300&family=Yanone+Kaffeesatz:wght@200;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,500&family=Foldit:wght@400;500;600&family=Monoton&family=Poppins:wght@700;800&family=Rubik+Pixels&family=Tilt+Prism&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Narnoor&family=Nunito:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Narnoor&family=Nunito:wght@200;300;400&family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+.PageNotFound {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    text-align: center;
+    /* background-color: $black-primary; */
+    font-size: 1.6rem;
+    position: absolute;
+    top: -7.5rem;
+    left: 0;
+    z-index: 99;
+    padding: 2rem 5rem;
+}
+
+.error404 {
+    font-size: 20rem;
+    /* color: lighten($hover-light-bg, 50); */
+    border: 1px;
+    font-family: "Monoton", cursive;
+    margin-inline: 0px;
+
+    /* @include md {
+        font-size: 18rem;
+    } */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.content h2 {
+    font-weight: 700;
+    font-size: 3.7rem !important;
+    /* color: $hover-light-bg; */
+    width: 70rem;
+
+    /* @include md {
+        font-size: 3.2rem !important;
+        width: 95%;
+    }
+
+    @include sm {
+        font-size: 2rem !important;
+    } */
+}
+
+.content .message {
+    /* color: $hover-light-bg; */
+    width: 50rem;
+    font-weight: 600;
+
+
+    /* @include md {
+        width: 70%;
+    }
+
+    @include sm {
+        font-size: 1rem !important;
+    } */
+}
+
+.button {
+    width: 30rem;
+    display: flex;
+    padding-block: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    /* background-color: $light-bg; */
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.hover {
+    translate: -1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.content,
+.button {
+    bottom: 10rem;
+}
