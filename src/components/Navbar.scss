@@ -1,10 +1,10 @@
 @import "../styles/variables";
 
 .Navbar {
-    padding: 1rem;
+    padding: 1rem 2rem;
     font-size: 1.6rem;
-    background-color: rgba($secondary-bg, .7);
-    backdrop-filter: blur(.5rem);
+    background-color: rgba(0, 0, 0, 0.434);
+    backdrop-filter: blur(1rem);
     position: fixed;
     z-index: 99;
     width: 100%;

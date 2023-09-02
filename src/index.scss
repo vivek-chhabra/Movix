@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Jost:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,200;8..60,300;8..60,400;8..60,500;8..60,600&display=swap");
+@import "./styles/breakPoints";
 @import "./styles/variables";
+@import "./styles/mixin";
 
 * {
     padding: 0;
@@ -11,6 +13,22 @@
 
 html {
     font-size: 62.5%;
+
+    @include sm {
+        
+    }
+
+    @include md {
+
+    }
+
+    @include lg {
+
+    }
+
+    @include xl {
+
+    }
 }
 
 /* utility classes */

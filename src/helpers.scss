@@ -1,0 +1,14 @@
+.error, .success, .primary {
+    max-width: 120rem;
+    width: 100%;
+    padding-inline: 2rem;
+    padding-block: 1.5rem;
+    font-size: 1.6rem;
+    top: 1rem;
+    border-radius: .5rem;
+
+    button {
+        margin-top: .3rem;
+        margin-right: .5rem;
+    }
+}

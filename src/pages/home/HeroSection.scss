@@ -1,4 +1,6 @@
 @import "../../styles/variables";
+@import "../../styles/breakPoints";
+@import "../../styles/mixin";
 
 .HeroSection {
     width: 100%;
@@ -9,9 +11,28 @@
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
+    padding-inline: 2rem;
+
+    .error {
+        margin-bottom: 50rem;
+        color: rgb(192, 64, 64);
+    }
+
+    @include md {
+        height: 450px;
+    }
+
+    .opacity-wrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(180deg, rgba(4, 21, 45, 0) 30%, #04152d 89.17%);
+    }
 
     &::before {
-        content: '';
+        content: "";
         width: 100%;
         height: 100%;
         position: absolute;
@@ -39,6 +60,7 @@
             color: $main-text;
             font-size: 2.5rem;
             font-size: 400 !important;
+            line-height: 110%;
         }
 
         .search {
