@@ -9,7 +9,7 @@
     align-items: center;
     line-height: 100%;
     background-size: cover !important;
-    background-position: center !important;
+    background-position: top !important;
     background-repeat: no-repeat !important;
     padding-inline: 2rem;
 
@@ -28,7 +28,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        background: linear-gradient(180deg, rgba(4, 21, 45, 0) 30%, #04152d 89.17%);
+        background: linear-gradient(180deg, rgba(5, 26, 54, 0.139) 50%, lighten($main-bg, 8) 89.17%);
     }
 
     &::before {
@@ -46,7 +46,6 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        gap: 5.5rem;
         font-size: 1.6rem;
         color: $main-text;
         z-index: 20;
@@ -54,6 +53,7 @@
         .title {
             font-size: 7.5rem;
             font-weight: 600;
+            line-height: 150%;
         }
 
         .msg {
@@ -68,6 +68,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-top: 5rem;
 
             input {
                 padding: 1.45rem 2.5rem;

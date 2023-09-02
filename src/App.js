@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import React, { useEffect } from "react";
 import Home from "./pages/home/Home";
 import "./App.scss";
+import Footer from "./components/Footer";
 
 function App() {
     // dispatch
@@ -44,6 +45,7 @@ function App() {
                 <Route path="/explore/:mediaType" element={<Explore />} />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
+            <Footer />
         </div>
     );
 }

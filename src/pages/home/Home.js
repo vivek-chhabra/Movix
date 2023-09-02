@@ -16,7 +16,9 @@ export default function Home() {
     return (
         <div className="Home">
             <HeroSection />
-            <div className="container"></div>
+            <div className="container" style={{height: 500}}>
+
+            </div>
         </div>
     );
 }

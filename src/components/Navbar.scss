@@ -1,4 +1,6 @@
+@import "../styles/breakPoints";
 @import "../styles/variables";
+@import "../styles/mixin";
 
 .Navbar {
     padding: 1rem 2rem;
@@ -6,9 +8,14 @@
     background-color: rgba(0, 0, 0, 0.434);
     backdrop-filter: blur(1rem);
     position: fixed;
-    z-index: 99;
+    z-index: 990;
     width: 100%;
     top: 0;
+    
+
+    &.show-nav {
+        background-color: $secondary-bg-2;
+    }
 
     .container {
         justify-content: space-between;
@@ -18,14 +25,56 @@
             cursor: pointer;
         }
 
+        .menu-items {
+            display: none;
+
+            @include md {
+                display: flex;
+                .menu,
+                .cross {
+                    position: absolute;
+                    top: -1rem;
+                    right: 0;
+                    color: $main-text;
+                    font-size: 2rem;
+                    cursor: pointer;
+                }
+            }
+        }
+
         .links {
             gap: 3rem;
             font-weight: 500;
             color: white;
+            justify-content: center;
+            align-items: center;
+            
+            @include md {
+                border-top: 1px solid rgba(255, 255, 255, 0.192);
+                background-color: $secondary-bg-2;
+                flex-direction: column;
+                position: absolute;
+                width: 110%;
+                top: 5rem;
+                left: -2rem;
+                align-items: flex-start;
+                padding: 2rem;
+                padding-left: 3rem;
+                z-index: -100;
+                gap: 2rem;
+                transform: translateY(-15rem);
+                opacity: 0;
+                visibility: hidden;
+
+                &.show-nav {
+                    transform: translateY(0rem);
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
 
             & > * {
                 padding-inline: 0.5rem;
-                padding-bottom: 0.5rem;
 
                 &:hover {
                     color: lighten($pink, 30);
@@ -37,7 +86,7 @@
                 &::before {
                     content: "";
                     position: absolute;
-                    bottom: 0;
+                    bottom: -0.5rem;
                     left: 0;
                     width: 0%;
                     height: 3px;
@@ -49,7 +98,8 @@
                 }
             }
 
-            & > *:hover {
+            cursor: default;
+            & > *:not(:last-child):hover {
                 cursor: pointer;
             }
         }

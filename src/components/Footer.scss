@@ -1,0 +1,60 @@
+@import "../styles/breakPoints";
+@import "../styles/variables";
+@import "../styles/mixin";
+
+.Footer {
+    padding: 4rem 6rem;
+    font-size: 1.6rem;
+    width: 100%;
+    background-color: darken($secondary-bg-2, 1);
+
+    .container {
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .items {
+            gap: 3rem;
+            color: $main-text;
+            font-weight: 600;
+            font-size: 1.8rem;
+
+            & > *:hover {
+                color: $pink;
+                cursor: pointer;
+            }
+        }
+
+        .about-us {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.272);
+            max-width: 80rem;
+            line-height: 115%;
+        }
+
+        .media {
+            gap: 2rem;
+            margin-top: 1rem;
+
+            & > * {
+                width: 5rem;
+                height: 5rem;
+                flex: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                color: $main-text;
+                cursor: pointer;
+                white-space: pre;
+                background-color: $main-bg;
+
+                &:hover {
+                    color: rgba($pink, .8);
+                    box-shadow: 0.1rem 0.1rem 0.5rem rgba($pink, .4), 0.1rem -0.1rem 0.5rem rgba($pink, .4), -0.1rem -0.1rem 0.5rem rgba($pink, .4), -0.1rem 0.1rem 0.5rem rgba($pink, .4);
+                }
+            }
+        }
+    }
+}

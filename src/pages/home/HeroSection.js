@@ -6,6 +6,7 @@ import { ErrorMsg } from "../../helpers";
 import "./HeroSection.scss";
 
 export default function HeroSection() {
+    // state
     const [background, setBackground] = useState("");
     const [query, setQuery] = useState("");
 
@@ -46,7 +47,7 @@ export default function HeroSection() {
                     <div className="opacity-wrapper"></div>
                     <div className="container flex-col">
                         <div className="title">Welcome.</div>
-                        <div className="msg">Millions of movies, TV shows and people to discover. Explore now.</div>
+                        <div className="msg">Millions of movies, TV shows and people to discover, Explore now.</div>
                         <form className="search" onSubmit={handleSubmit}>
                             <input type="text" required name="" id="" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search for a movie or TV show..." />
                             <button>Search</button>
