@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.scss";
 import logo from "../assets/movix-logo.svg";
 import { NavLink } from "react-router-dom";
@@ -13,7 +13,7 @@ export default function Navbar() {
     };
 
     return (
-        <div className={`Navbar ${showMenu && 'show-nav'}`}>
+        <div className={`Navbar ${showMenu && "show-nav"}`}>
             <div className={`container flex`}>
                 <NavLink to={"/"}>
                     <img src={logo} alt="" />

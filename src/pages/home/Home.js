@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import "./Home.scss";
 import { fetchMovies } from "../../redux/slice/moviesSlice";
 import { useDispatch } from "react-redux";
+import MoviesRow from "../../components/MoviesRow";
 
 export default function Home() {
     // dispatch
@@ -16,8 +17,10 @@ export default function Home() {
     return (
         <div className="Home">
             <HeroSection />
-            <div className="container" style={{height: 500}}>
-
+            <div className="container">
+                <MoviesRow categories={['day', "week"]} type="trending" movies={[]} mediaType='all'/>
+                {/* <MoviesRow categories={['movies', "tv"]} type="trending" movies={[]} mediaType='all'/> */}
+                {/* <MoviesRow categories={['day', "week"]} type="trending" movies={[]} mediaType='all'/> */}
             </div>
         </div>
     );

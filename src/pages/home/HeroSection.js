@@ -10,10 +10,8 @@ export default function HeroSection() {
     const [background, setBackground] = useState("");
     const [query, setQuery] = useState("");
 
-    // navigate
+    // hook instances
     const navigate = useNavigate();
-
-    // dispatch
     const dispatch = useDispatch();
 
     // fetching banner image
@@ -25,14 +23,15 @@ export default function HeroSection() {
     const { movies, success, error, isPending } = useSelector((data) => data.movies);
     const { url, categories } = useSelector((data) => data.home);
 
+    // setting random banner image
     useEffect(() => {
         let random = Math.floor(Math.random() * 20);
-        if (movies?.results?.length > 0) {
+        if (movies?.results?.length) {
             setBackground(url?.backdrop + movies?.results[random].backdrop_path);
         }
-        console.log("back", background);
-    }, [movies, url]);
+    }, [movies]);
 
+    // handling search submit
     const handleSubmit = (e) => {
         e.preventDefault();
         navigate(`/search/${query}`);

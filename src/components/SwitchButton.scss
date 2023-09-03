@@ -1,0 +1,33 @@
+@import "../styles/variables";
+
+.SwitchButton {
+    width: 20rem;
+    height: 4.3rem;
+    font-size: 1.4rem;
+    border-radius: 5rem;
+    background-color: $main-text;
+    z-index: 50;
+    justify-content: center;
+    align-items: center;
+
+    .movies,
+    .tv {
+        width: 48.5%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        border-radius: 5rem;
+        cursor: pointer;
+        font-weight: 600;
+        white-space: pre;
+        text-transform: capitalize;
+    }
+
+    .movies.active,
+    .tv.active {
+        background: $gradient;
+        height: 85%;
+        justify-content: center;
+        align-items: center;
+    }
+}

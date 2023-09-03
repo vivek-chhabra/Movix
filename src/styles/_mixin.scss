@@ -1,8 +1,21 @@
 /* line clamp */
 @mixin line-clamp($lines) {
-    display: -webkit-box;
-    -webkit-line-break: $lines;
-    -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+}
+
+// avatar
+@mixin avatar($width, $height) {
+    .img {
+        width: $width;
+        height: $height;
+        border-radius: 50%;
+        img {
+            width: $width;
+            height: $height;
+            border-radius: 50%;
+        }
+    }
 }

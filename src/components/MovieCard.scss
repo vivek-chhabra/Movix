@@ -1,0 +1,31 @@
+@import '../styles/breakPoints';
+@import '../styles/variables';
+@import '../styles/mixin';
+
+.MovieCard {
+    .img {
+        height: 32.5rem;
+        border-radius: 1rem;
+
+        img {
+            height: 100%;
+            border-radius: 1rem;
+        }
+    }
+
+    .main-content {
+        margin-top: 3rem;
+        gap: 1rem;
+
+        .title {
+            @include line-clamp(1);
+            font-size: 1.8rem;
+        }
+
+        .date {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.313);
+            font-weight: 600;
+        }
+    }
+}

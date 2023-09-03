@@ -7,10 +7,10 @@ import PageNotFound from "./components/PageNotFound";
 import { Route, Routes } from "react-router-dom";
 import Explore from "./pages/explore/Explore";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import React, { useEffect } from "react";
 import Home from "./pages/home/Home";
 import "./App.scss";
-import Footer from "./components/Footer";
 
 function App() {
     // dispatch

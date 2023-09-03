@@ -1,3 +1,10 @@
 .Home {
     font-size: 1.6rem;
+
+    & > .container {
+        gap: 8rem;
+        display: flex;
+        flex-direction: column;
+        padding: 8rem 3rem;
+    }
 }

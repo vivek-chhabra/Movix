@@ -1,0 +1,20 @@
+@import '../styles//variables';
+
+.RatingsCircle {
+    background-color: white;
+    border-radius: 50%;
+    padding: 2px;
+    width: 5rem;
+    position: absolute;
+    bottom: -2rem;
+    left: 1rem;
+    
+    .CircularProgressbar-text {
+        font-weight: 700;
+        font-size: 3rem !important;
+        fill: $main-bg;
+    }
+    .CircularProgressbar-trail {
+        stroke: transparent;
+    }
+}
