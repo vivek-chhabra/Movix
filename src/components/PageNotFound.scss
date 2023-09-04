@@ -2,6 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,500&family=Foldit:wght@400;500;600&family=Monoton&family=Poppins:wght@700;800&family=Rubik+Pixels&family=Tilt+Prism&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Narnoor&family=Nunito:wght@200;300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Narnoor&family=Nunito:wght@200;300;400&family=Open+Sans:wght@300;400;500;600;700&display=swap");
+@import "../styles/breakPoints";
+@import "../styles/variables";
+@import "../styles/mixin";
 
 .PageNotFound {
     width: 100%;
@@ -12,25 +15,32 @@
     align-items: center;
     gap: 6rem;
     text-align: center;
-    /* background-color: $black-primary; */
+    background-color: $secondary-bg-2;
     font-size: 1.6rem;
     position: absolute;
-    top: -7.5rem;
     left: 0;
-    z-index: 99;
+    z-index: 1000;
     padding: 2rem 5rem;
 }
 
 .error404 {
     font-size: 20rem;
-    /* color: lighten($hover-light-bg, 50); */
     border: 1px;
-    font-family: "Monoton", cursive;
+    color: #546a89;
     margin-inline: 0px;
+    font-family: "Monoton", cursive;
 
-    /* @include md {
+    @include md {
         font-size: 18rem;
-    } */
+    }
+
+    @include sm {
+        font-size: 18rem;
+    }
+
+    @include xs {
+        font-size: 15rem;
+    }
 }
 
 .content {
@@ -40,22 +50,28 @@
     align-items: center;
     gap: 1rem;
     margin-top: 2rem;
+    color: #3b4758;
 }
 
 .content h2 {
     font-weight: 700;
     font-size: 3.7rem !important;
-    /* color: $hover-light-bg; */
     width: 70rem;
 
-    /* @include md {
+    @include md {
         font-size: 3.2rem !important;
         width: 95%;
     }
 
     @include sm {
-        font-size: 2rem !important;
-    } */
+        width: 50rem;
+        font-size: 3rem;
+    }
+
+    @include xs {
+        width: 50rem;
+        font-size: 2.5rem;
+    }
 }
 
 .content .message {
@@ -63,14 +79,9 @@
     width: 50rem;
     font-weight: 600;
 
-
-    /* @include md {
+    @include md {
         width: 70%;
     }
-
-    @include sm {
-        font-size: 1rem !important;
-    } */
 }
 
 .button {
@@ -80,18 +91,18 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    /* background-color: $light-bg; */
+    background-color: #546a89;
     color: #ffffff;
     text-decoration: none;
 }
 
-.hover {
-    translate: -1rem;
-    transition: all 0.2s ease-in-out;
-}
-
 .button:hover {
     cursor: pointer;
+
+    & > i {
+        translate: -1rem;
+        transition: all 0.2s ease-in-out;
+    }
 }
 
 .content,
