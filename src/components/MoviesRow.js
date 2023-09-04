@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import MovieCard from "./MovieCard";
 import "./MoviesRow.scss";
 
-export default function MoviesRow({ categories, type, mediaType }) {
+export default function MoviesRow({ categories, type, mediaType, typeUrl }) {
     // state
     const [moviesActive, setMoviesActive] = useState(true);
 
@@ -15,7 +15,11 @@ export default function MoviesRow({ categories, type, mediaType }) {
 
     // fetching data
     useEffect(() => {
-        fetchMovies(`/${type}/${mediaType}/${moviesActive ? categories[0] : categories[1]}`);
+        if (typeUrl !== "trending") {
+            fetchMovies(`/${moviesActive ? categories[0] : categories[1]}/${typeUrl}/`);
+        } else {
+            fetchMovies(`/${typeUrl}/${mediaType}/${moviesActive ? categories[0] : categories[1]}`);
+        }
     }, [moviesActive]);
 
     // instances for hooks
@@ -55,7 +59,7 @@ export default function MoviesRow({ categories, type, mediaType }) {
                 ) : (
                     <div className="movies-list flex">
                         {movies?.results?.map((movie) => (
-                            <MovieCard key={movie.id} movie={movie} url={url} />
+                            <MovieCard key={movie.id} movie={movie} isPending={isPending} url={url} mediaType={`${moviesActive ? categories[0] : categories[1]}`} />
                         ))}
                     </div>
                 )}

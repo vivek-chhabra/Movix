@@ -1,9 +1,10 @@
-@import '../styles//variables';
+@import '../styles/variables';
+@import '../styles/breakPoints';
 
 .RatingsCircle {
     background-color: white;
     border-radius: 50%;
-    padding: 2px;
+    padding: .2rem;
     width: 5rem;
     position: absolute;
     bottom: -2rem;
@@ -13,6 +14,16 @@
         font-weight: 700;
         font-size: 3rem !important;
         fill: $main-bg;
+
+        @include md {
+            font-size: 4rem !important;
+        }
+        @include sm {
+            font-size: 4rem !important;
+        }
+        @include xs {
+            font-size: 4rem !important;
+        }
     }
     .CircularProgressbar-trail {
         stroke: transparent;

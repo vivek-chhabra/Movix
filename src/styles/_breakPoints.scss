@@ -1,16 +1,23 @@
-$sm: 640px;
+$xs: 430px;
+$sm: 550px;
 $md: 768px;
 $lg: 1024px;
 $xl: 1280px;
 
+@mixin xs {
+    @media screen and (max-width: $xs) {
+        @content;
+    }
+}
+
 @mixin sm {
-    @media screen and (max-width: $sm) {
+    @media (min-width: $xs) and (max-width: $sm) {
         @content;
     }
 }
 
 @mixin md {
-    @media screen and (max-width: $md) {
+    @media (min-width: $sm) and (max-width: $md) {
         @content;
     }
 }

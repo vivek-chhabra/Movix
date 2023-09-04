@@ -11,8 +11,8 @@
     z-index: 990;
     width: 100%;
     top: 0;
-    
 
+    
     &.show-nav {
         background-color: $secondary-bg-2;
     }
@@ -21,6 +21,9 @@
         justify-content: space-between;
         align-items: center;
 
+        img {
+            height: 4rem;
+        }
         img:hover {
             cursor: pointer;
         }
@@ -40,6 +43,32 @@
                     cursor: pointer;
                 }
             }
+
+            @include sm {
+                display: flex;
+                .menu,
+                .cross {
+                    position: absolute;
+                    top: -1rem;
+                    right: 0;
+                    color: $main-text;
+                    font-size: 2rem;
+                    cursor: pointer;
+                }
+            }
+
+            @include xs {
+                display: flex;
+                .menu,
+                .cross {
+                    position: absolute;
+                    top: -1rem;
+                    right: 0;
+                    color: $main-text;
+                    font-size: 2rem;
+                    cursor: pointer;
+                }
+            }
         }
 
         .links {
@@ -48,29 +77,17 @@
             color: white;
             justify-content: center;
             align-items: center;
-            
-            @include md {
-                border-top: 1px solid rgba(255, 255, 255, 0.192);
-                background-color: $secondary-bg-2;
-                flex-direction: column;
-                position: absolute;
-                width: 110%;
-                top: 5rem;
-                left: -2rem;
-                align-items: flex-start;
-                padding: 2rem;
-                padding-left: 3rem;
-                z-index: -100;
-                gap: 2rem;
-                transform: translateY(-15rem);
-                opacity: 0;
-                visibility: hidden;
 
-                &.show-nav {
-                    transform: translateY(0rem);
-                    opacity: 1;
-                    visibility: visible;
-                }
+            @include md {
+                @include responsiveness;
+            }
+
+            @include sm {
+                @include responsiveness;
+            }
+
+            @include xs {
+                @include responsiveness;
             }
 
             & > * {

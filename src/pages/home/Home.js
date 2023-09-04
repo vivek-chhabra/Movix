@@ -18,9 +18,9 @@ export default function Home() {
         <div className="Home">
             <HeroSection />
             <div className="container">
-                <MoviesRow categories={['day', "week"]} type="trending" movies={[]} mediaType='all'/>
-                {/* <MoviesRow categories={['movies', "tv"]} type="trending" movies={[]} mediaType='all'/> */}
-                {/* <MoviesRow categories={['day', "week"]} type="trending" movies={[]} mediaType='all'/> */}
+                <MoviesRow categories={['day', "week"]} type="trending" typeUrl='trending' mediaType='all'/>
+                <MoviesRow categories={['movie', "tv"]} type="what's popular" typeUrl='popular' />
+                <MoviesRow categories={['movie', "tv"]} type="top rated" typeUrl='top_rated' />
             </div>
         </div>
     );

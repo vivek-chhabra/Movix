@@ -12,6 +12,7 @@ export const useFetchMovies = () => {
         setIsPending(true);
         setError({});
         try {
+            console.log('in the fetchHook', BASE_URL + url)
             const res = await axios(BASE_URL + url, {
                 headers,
                 params,

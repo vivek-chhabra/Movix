@@ -34,14 +34,7 @@
             }
 
             .skeletonItem {
-                width: 22rem;
-                height: 40.5rem;
-                @include md {
-                    width: calc(25% - 15px);
-                }
-                @include lg {
-                    width: calc(20% - 16px);
-                }
+                width: 21.6rem;
                 flex-shrink: 0;
 
                 .posterBlock {

@@ -19,3 +19,27 @@
         }
     }
 }
+
+@mixin responsiveness() {
+    border-top: 1px solid rgba(255, 255, 255, 0.192);
+    background-color: $secondary-bg-2;
+    flex-direction: column;
+    position: absolute;
+    width: 110%;
+    top: 5rem;
+    left: -2rem;
+    align-items: flex-start;
+    padding: 2rem;
+    padding-left: 3rem;
+    z-index: -100;
+    gap: 2rem;
+    transform: translateY(-15rem);
+    opacity: 0;
+    visibility: hidden;
+
+    &.show-nav {
+        transform: translateY(0rem);
+        opacity: 1;
+        visibility: visible;
+    }
+}

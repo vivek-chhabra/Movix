@@ -8,6 +8,14 @@
     width: 100%;
     background-color: darken($secondary-bg-2, 1);
 
+    @include sm {
+        padding: 3rem 2rem !important;
+    }
+
+    @include xs {
+        padding: 3rem 2rem !important;
+    }
+
     .container {
         gap: 2rem;
         justify-content: center;
@@ -19,6 +27,7 @@
             color: $main-text;
             font-weight: 600;
             font-size: 1.8rem;
+            white-space: pre;
 
             & > *:hover {
                 color: $pink;
@@ -31,11 +40,23 @@
             color: rgba(255, 255, 255, 0.228);
             max-width: 80rem;
             line-height: 115%;
+
+            @include sm {
+                width: 100% !important;
+            }
+
+            @include xs {
+                width: 100% !important;
+            }
         }
 
         .media {
             gap: 2rem;
             margin-top: 1rem;
+
+            @include xs {
+                justify-content: space-between;
+            }
 
             & > * {
                 width: 5rem;
