@@ -39,8 +39,6 @@ const DetailsBanner = ({ video, crew }) => {
         setVideoId(video.key);
     };
 
-    console.log("video", video);
-
     return (
         <div className="DetailsBanner">
             {!isPending ? (

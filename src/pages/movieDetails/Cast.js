@@ -16,7 +16,6 @@ const Cast = ({ data, isPending }) => {
         );
     };
 
-    console.log(data, "in cast");
     return (
         <div className="Cast">
             <div className="container">
