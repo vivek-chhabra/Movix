@@ -1,0 +1,112 @@
+@import "../../styles/breakPoints";
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.videosSection {
+    position: relative;
+    margin-bottom: 5rem;
+
+    .sectionHeading {
+        font-size: 2.4rem;
+        color: white;
+        margin-bottom: 2.5rem;
+    }
+
+    .videos {
+        display: flex;
+        gap: 2rem;
+        overflow-x: auto;
+        margin-right: -2rem;
+        margin-left: -2rem;
+        padding: 0 2rem;
+
+        .videoItem {
+            width: 33rem;
+            flex-shrink: 0;
+            cursor: pointer;
+
+            .videoThumbnail {
+                margin-bottom: 1.5rem;
+                position: relative;
+                img {
+                    width: 100%;
+                    display: block;
+                    border-radius: 1.2rem;
+                    transition: all 0.7s ease-in-out;
+                }
+                svg {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 5rem;
+                    height: 5rem;
+                }
+                .triangle {
+                    stroke-dasharray: 240;
+                    stroke-dashoffset: 480;
+                    stroke: white;
+                    transform: translateY(0);
+                    transition: all 0.7s ease-in-out;
+                }
+                .circle {
+                    stroke: white;
+                    stroke-dasharray: 650;
+                    stroke-dashoffset: 1300;
+                    transition: all 0.5s ease-in-out;
+                }
+                &:hover {
+                    img {
+                        opacity: 0.5;
+                    }
+                    .triangle {
+                        stroke-dashoffset: 0;
+                        opacity: 1;
+                        stroke: $pink;
+                        animation: trailorPlay 0.7s ease-in-out;
+                    }
+                    .circle {
+                        stroke-dashoffset: 0;
+                        stroke: var(--pink);
+                    }
+                }
+            }
+
+            .videoTitle {
+                color: white;
+                font-size: 1.8rem;
+                line-height: 2rem;
+            }
+        }
+    }
+
+    .videoSkeleton {
+        display: flex;
+        gap: 1rem;
+        overflow-x: auto;
+        margin-right: -2rem;
+        margin-left: -2rem;
+        padding: 0 2rem;
+        .skItem {
+            width: 33rem;
+            flex-shrink: 0;
+            .thumb {
+                width: 100%;
+                aspect-ratio: 16 / 9;
+                border-radius: 1.2rem;
+                margin-bottom: 1rem;
+            }
+            .row {
+                height: 2rem;
+                width: 100%;
+                border-radius: 1rem;
+                margin-bottom: 1rem;
+            }
+            .row2 {
+                height: 2rem;
+                width: 75%;
+                border-radius: 1rem;
+            }
+        }
+    }
+}
