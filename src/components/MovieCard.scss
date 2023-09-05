@@ -1,6 +1,6 @@
-@import '../styles/breakPoints';
-@import '../styles/variables';
-@import '../styles/mixin';
+@import "../styles/breakPoints";
+@import "../styles/variables";
+@import "../styles/mixin";
 
 .MovieCard {
     .img {
@@ -10,6 +10,12 @@
         img {
             height: 100%;
             border-radius: 1rem;
+        }
+
+        .RatingsCircle {
+            position: absolute;
+            bottom: -2rem;
+            left: 1rem;
         }
     }
 

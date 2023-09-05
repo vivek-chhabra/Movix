@@ -14,7 +14,7 @@ export default function MovieCard({ movie, url, mediaType }) {
     return (
         <div className="MovieCard flex-col" onClick={() => navigate(`/${movie?.media_type || mediaType}/${movie.id}`)}>
             <div className="img">
-                <img src={imgURL} alt="" />
+                <img src={imgURL} loading="lazy" alt="" />
                 <div className="genres"></div>
                 <RatingsCircle rating={movie.vote_average.toFixed(1)} />
             </div>

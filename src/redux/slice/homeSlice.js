@@ -15,7 +15,7 @@ const homeSlice = createSlice({
             state.url = action.payload;
         },
         getCategories: (state, action) => {
-        state.categories = action.payload;
+            state.categories = action.payload;
         },
     },
 });
@@ -23,5 +23,5 @@ const homeSlice = createSlice({
 // actions
 export const { getApiConfiguration, getCategories } = homeSlice.actions;
 
-// reducer 
-export const homeReducer = homeSlice.reducer
+// reducer
+export const homeReducer = homeSlice.reducer;
