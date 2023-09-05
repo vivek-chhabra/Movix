@@ -22,7 +22,7 @@ export default function MovieDetails() {
     return (
         <div className="MovieDetails">
             {success && creSuccess && <DetailsBanner video={vidDetails?.data?.results[0]} crew={creDetails?.data?.crew} />}
-            {/* <Cast data={creDetails.cast} isPending={crePending} /> */}
+            <Cast data={creDetails?.data?.cast} isPending={crePending} />
         </div>
     );
 }

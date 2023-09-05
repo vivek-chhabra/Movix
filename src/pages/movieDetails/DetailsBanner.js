@@ -26,8 +26,8 @@ const DetailsBanner = ({ video, crew }) => {
     }, [mediaType, id]);
 
     const director = crew?.filter((f) => f.job === "Director");
-    const writer = crew?.filter((f) => f.job === "Screenplay" || "Story" || "Writer");
-    
+    const writer = crew?.filter((f) => f.job === "Writer");
+
     const toHoursAndMinutes = (totalMinutes) => {
         const hours = Math.floor(totalMinutes / 60);
         const minutes = totalMinutes % 60;
@@ -35,11 +35,11 @@ const DetailsBanner = ({ video, crew }) => {
     };
 
     const handleVideoPlayer = () => {
-        setShow(true)
-        setVideoId(video.key)
-    }
+        setShow(true);
+        setVideoId(video.key);
+    };
 
-    console.log('video', video)
+    console.log("video", video);
 
     return (
         <div className="DetailsBanner">
@@ -73,19 +73,19 @@ const DetailsBanner = ({ video, crew }) => {
                             </div>
                             <div className="info flex">
                                 {data.status && (
-                                    <div className="infoItem">
+                                    <div className="infoItem flex">
                                         <span className="text bold">Status: </span>
                                         <span className="text">{data.status}</span>
                                     </div>
                                 )}
                                 {(data.release_date || data.first_air_date) && (
-                                    <div className="infoItem">
+                                    <div className="infoItem flex">
                                         <span className="text bold">Release Date: </span>
                                         <span className="text">{dayjs(data.release_date).format("MMM, D, YYYY")}</span>
                                     </div>
                                 )}
                                 {data.runtime && (
-                                    <div className="infoItem">
+                                    <div className="infoItem flex">
                                         <span className="text bold">Runtime: </span>
                                         <span className="text">{toHoursAndMinutes(data.runtime)}</span>
                                     </div>
@@ -93,7 +93,7 @@ const DetailsBanner = ({ video, crew }) => {
                             </div>
 
                             {director.length > 0 && (
-                                <div className="info">
+                                <div className="info flex">
                                     <div className="text bold">Director: </div>
                                     <span className="text dull">
                                         {director.map((d, i) => (
@@ -105,7 +105,7 @@ const DetailsBanner = ({ video, crew }) => {
                                 </div>
                             )}
                             {writer?.length > 0 && (
-                                <div className="info writer">
+                                <div className="info flex writer">
                                     <div className="text bold">Writer: </div>
                                     <span className="text dull">
                                         {writer.map((d, i) => (
@@ -117,12 +117,12 @@ const DetailsBanner = ({ video, crew }) => {
                                 </div>
                             )}
                             {data?.created_by?.length > 0 && (
-                                <div className="info">
+                                <div className="info flex">
                                     <div className="text bold">Creator: </div>
                                     <span className="text dull">
                                         {data?.created_by?.map((d, i) => (
                                             <span key={i}>
-                                                {d.name} {director?.length - 1 !== i && ", "}
+                                                {d.name} {data?.created_by?.length - 1 !== i && ", "}
                                             </span>
                                         ))}
                                     </span>
