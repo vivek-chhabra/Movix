@@ -6,24 +6,19 @@ import { ErrorMsg } from "../../helpers";
 import "./HeroSection.scss";
 
 export default function HeroSection() {
-    // state
     const [background, setBackground] = useState("");
     const [query, setQuery] = useState("");
 
-    // hook instances
+    const { movies, success, error, isPending } = useSelector((data) => data.movies);
+    const { url, categories } = useSelector((data) => data.home);
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    // fetching banner image
     useEffect(() => {
         dispatch(fetchMovies({ url: "/movie/upcoming" }));
     }, []);
 
-    // getting data from redux store
-    const { movies, success, error, isPending } = useSelector((data) => data.movies);
-    const { url, categories } = useSelector((data) => data.home);
-
-    // setting random banner image
     useEffect(() => {
         let random = Math.floor(Math.random() * 20);
         if (movies?.results?.length) {
@@ -31,7 +26,6 @@ export default function HeroSection() {
         }
     }, [movies]);
 
-    // handling search submit
     const handleSubmit = (e) => {
         e.preventDefault();
         navigate(`/search/${query}`);

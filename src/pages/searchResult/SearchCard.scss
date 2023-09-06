@@ -1,0 +1,43 @@
+@import '../../styles/breakPoints';
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
+.SearchCard {
+    width: 21.6rem;
+    cursor: pointer;
+    .img {
+        height: 32.5rem;
+        width: 100%;
+        border-radius: 1rem;
+
+        img {
+            height: 100%;
+            width: 100%;
+            border-radius: 1rem;
+        }
+
+        .RatingsCircle {
+            position: absolute;
+            bottom: -2rem;
+            left: 1rem;
+        }
+    }
+
+    .main-content {
+        margin-top: 1rem;
+        gap: 1rem;
+        width: 21.6rem;
+
+        .title {
+            @include line-clamp(1);
+            font-size: 1.6rem;
+            color: white;
+        }
+
+        .date {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.245);
+            font-weight: 500;
+        }
+    }
+}

@@ -13,16 +13,12 @@ import Home from "./pages/home/Home";
 import "./App.scss";
 
 function App() {
-    // dispatch
     const dispatch = useDispatch();
+    const { isPending, error, success, ApiConfig } = useSelector((data) => data.apiConfig);
 
-    // fetching the apiConfig
     useEffect(() => {
         dispatch(fetchApiConfig({ url: "/configuration" }));
     }, []);
-
-    // use selector
-    const { isPending, error, success, ApiConfig } = useSelector((data) => data.apiConfig);
 
     useEffect(() => {
         if (success) {
@@ -41,7 +37,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/:mediaType/:id" element={<MovieDetails />} />
-                <Route path="/search" element={<SearchResult />} />
+                <Route path="/search/:query" element={<SearchResult />} />
                 <Route path="/explore/:mediaType" element={<Explore />} />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
