@@ -1,4 +1,29 @@
+@import '../../styles/breakPoints';
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
 .MovieDetails {
     padding-bottom: 8rem;
 
+    & > .main-content {
+        padding-inline: 4rem;
+        gap: 5rem;
+        
+        @include md {
+            padding-top: 90rem;
+            padding-inline: 2rem;
+        }
+
+        @include sm {
+            padding-inline: 2rem;
+            padding-top: 90rem;
+
+        }
+
+        @include xs {
+            padding-inline: 2rem;
+            padding-top: 90rem;
+
+        }
+    }
 }

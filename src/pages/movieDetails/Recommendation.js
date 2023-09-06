@@ -12,7 +12,7 @@ export default function Recommendation({ mediaType, id }) {
     const title = mediaType === 'tv' ? 'Recommended TV Shows' : 'Recommended Movies';  
 
     return (
-        <div className="Recommendation" style={{marginTop: '6rem'}}>
+        <div className="Recommendation">
             <MoviesRow type={title} typeUrl='recommendations' mediaType={mediaType} id={id}/>
         </div>
     );

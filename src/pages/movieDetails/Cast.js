@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import "./Cast.scss";
 import avatar from "../../assets/avatar.png";
@@ -30,9 +30,7 @@ const Cast = ({ data, isPending }) => {
                                         <img src={profileImg} loading="lazy" alt="" />
                                     </div>
                                     <div className="name">{item.name}</div>
-                                    <div className="character">
-                                        {item.character}
-                                    </div>
+                                    <div className="character">{item.character}</div>
                                 </div>
                             );
                         })}

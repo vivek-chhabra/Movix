@@ -4,12 +4,16 @@
 
 .videosSection {
     position: relative;
-    margin-bottom: 5rem;
 
     .sectionHeading {
         font-size: 2.4rem;
         color: white;
         margin-bottom: 2.5rem;
+        font-weight: 600;
+
+        @include md {
+            font-weight: 500;
+        }
     }
 
     .videos {

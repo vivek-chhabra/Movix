@@ -40,19 +40,81 @@
         display: flex;
         gap: 5rem;
 
+        @include md {
+            flex-direction: column;
+        }
+
+        @include xs {
+            flex-direction: column;
+        }
+
+        @include sm {
+            flex-direction: column;
+        }
+
         .left {
-            width: 28%;
+            width: 35rem;
             margin-top: 11rem;
+
+            @include md {
+                width: 100%;
+            }
+
+            @include sm {
+                width: 100%;
+            }
+
+            @include xs {
+                width: 100%;
+            }
+
             .posterImg {
                 width: 100%;
+
                 display: block;
                 border-radius: 12px;
+
+                @include md {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: top;
+                }
+
+                @include sm {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: top;
+                }
+
+                @include xs {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: top;
+                }
             }
         }
         .right {
             color: white;
             width: 66%;
             margin-top: 11rem;
+
+            @include md {
+                width: 100%;
+                bottom: 10rem;
+            }
+
+            @include sm {
+                width: 100%;
+                bottom: 10rem;
+            }
+
+            @include xs {
+                width: 100%;
+                bottom: 10rem;
+            }
 
             .title {
                 font-size: 3rem;
@@ -152,6 +214,11 @@
                 }
                 .description {
                     line-height: 2.4rem;
+
+                    @include md {
+                        height: 12rem;
+                        overflow-y: auto;
+                    }
                 }
             }
 
@@ -188,8 +255,12 @@
                 }
                 & > .text.bold,
                 & > .infoItem > .text.bold {
-                    font-size: 2rem;
+                    font-size: 1.8rem;
                     font-weight: 600;
+
+                    @include md {
+                        font-weight: 400;
+                    }
                 }
                 .dull {
                     color: rgba($main-text, 0.4);

@@ -25,23 +25,23 @@ const VideosSection = ({ data, isPending }) => {
     return (
         <div className="videosSection">
             <div className="container">
-                <div className="sectionHeading">Official Videos</div>
+                <div className="sectionHeading">{data?.results?.length > 0 && "Official Videos"}</div>
                 {!isPending ? (
-                    <div className="videos">
-                        {data?.results?.map((video) => {
-                            return (
-                                <div className="videoItem" key={video.id} onClick={() => handleVideoPlayer(video.key)}>
-                                    <div className="videoThumbnail">
-                                        <img src={`https://img.youtube.com/vi/${video.key}/mqdefault.jpg`} alt="" />
-                                        <PlayIcon />
+                    data?.results.length > 0 && (
+                        <div className="videos">
+                            {data?.results?.map((video) => {
+                                return (
+                                    <div className="videoItem" key={video.id} onClick={() => handleVideoPlayer(video.key)}>
+                                        <div className="videoThumbnail">
+                                            <img src={`https://img.youtube.com/vi/${video.key}/mqdefault.jpg`} alt="" />
+                                            <PlayIcon />
+                                        </div>
+                                        <div className="videoTitle">{video.name}</div>
                                     </div>
-                                    <div className="videoTitle">
-                                        {video.name}
-                                    </div>
-                                </div>
-                            );
-                        })}
-                    </div>
+                                );
+                            })}
+                        </div>
+                    )
                 ) : (
                     <div className="videoSkeleton">
                         {loadingSkeleton()}

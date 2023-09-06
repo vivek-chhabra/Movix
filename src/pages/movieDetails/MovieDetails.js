@@ -19,21 +19,19 @@ export default function MovieDetails() {
     const { error: creErr, isPending: crePending, success: creSuccess, movieDetails: creDetails } = useSelector((state) => state.creditDetails);
 
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [window.location]);
-
-    useEffect(() => {
         dispatch(fetchVideos({ url: `/${mediaType}/${id}/videos` }));
         dispatch(fetchCredits({ url: `/${mediaType}/${id}/credits` }));
-    }, []);
+    }, [id, mediaType]);
 
     return (
         <div className="MovieDetails">
             {success && creSuccess && <DetailsBanner video={vidDetails?.data?.results[0]} crew={creDetails?.data?.crew} />}
-            <Cast data={creDetails?.data?.cast} isPending={crePending} />
-            <VideoSection data={vidDetails?.data} isPending={isPending} />
-            <SimilarMovies id={id} mediaType={mediaType} />
-            <Recommendation id={id} mediaType={mediaType} />
+            <div className="main-content flex-col">
+                <Cast data={creDetails?.data?.cast} isPending={crePending} />
+                <VideoSection data={vidDetails?.data} isPending={isPending} />
+                <SimilarMovies id={id} mediaType={mediaType} />
+                <Recommendation id={id} mediaType={mediaType} />
+            </div>
         </div>
     );
 }
