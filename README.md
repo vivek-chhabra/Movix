@@ -3,6 +3,10 @@
 
 <br>
 
+>[Live Demo](movix-ten-blue.vercel.app)
+
+<br>
+
 ![07 09 2023_16 16 43_REC](https://github.com/vivek-chhabra/Movix/assets/105328667/c99391bf-791c-40c2-85ad-42fff66f4fa3)
 
 <br>
@@ -10,9 +14,7 @@
 ## Features 🚀
 
 - **Search Movies and TV Shows** 🔍
-
 - **Browse Movies and TV Shows** 📽️
-
 - **View Movie/TV Show Details** ℹ️
 
 <br>
