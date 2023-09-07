@@ -1,13 +1,13 @@
+import { useFetchMovies } from "../../hooks/fetchMovies/useFetchMovies";
+import RatingsCircle from "../../components/RatingsCircle";
+import PosterFallback from "../../assets/no-poster.png";
+import VideoPopup from "../../components/VideoPopup";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import dayjs from "dayjs";
-import "./DetailsBanner.scss";
-import PosterFallback from "../../assets/no-poster.png";
-import RatingsCircle from "../../components/RatingsCircle";
-import { useFetchMovies } from "../../hooks/fetchMovies/useFetchMovies";
 import { PlayIcon } from "./PlayBtn";
-import VideoPopup from "../../components/VideoPopup";
+import "./DetailsBanner.scss";
+import dayjs from "dayjs";
 
 const DetailsBanner = ({ video, crew }) => {
     const [show, setShow] = useState(false);

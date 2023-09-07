@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
-import "./Cast.scss";
 import avatar from "../../assets/avatar.png";
+import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import "./Cast.scss";
 
 const Cast = ({ data, isPending }) => {
     const { url } = useSelector((state) => state.home);

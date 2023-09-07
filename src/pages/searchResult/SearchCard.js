@@ -1,9 +1,9 @@
-import React from "react";
-import "./SearchCard.scss";
-import noPoster from "../../assets/no-poster.png";
-import dayjs from "dayjs";
 import RatingsCircle from "../../components/RatingsCircle";
+import noPoster from "../../assets/no-poster.png";
 import { useNavigate } from "react-router-dom";
+import "./SearchCard.scss";
+import React from "react";
+import dayjs from "dayjs";
 
 export default function SearchCard({ movie, url, mediaType }) {
     const navigate = useNavigate();

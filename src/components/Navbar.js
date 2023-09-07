@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./Navbar.scss";
 import logo from "../assets/movix-logo.svg";
 import { NavLink } from "react-router-dom";
+import "./Navbar.scss";
 
 export default function Navbar() {
     // state

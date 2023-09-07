@@ -1,9 +1,9 @@
-import HeroSection from "./HeroSection";
-import React, { useEffect } from "react";
-import "./Home.scss";
 import { fetchMovies } from "../../redux/slice/moviesSlice";
-import { useDispatch } from "react-redux";
 import MoviesRow from "../../components/MoviesRow";
+import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import HeroSection from "./HeroSection";
+import "./Home.scss";
 
 export default function Home() {
     // dispatch

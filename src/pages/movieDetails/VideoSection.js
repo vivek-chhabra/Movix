@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import "./VideoSection.scss";
 import VideoPopup from "../../components/VideoPopup";
+import React, { useState } from "react";
 import { PlayIcon } from "./PlayBtn";
+import "./VideoSection.scss";
 
 const VideosSection = ({ data, isPending }) => {
     const [show, setShow] = useState(false);

@@ -3,13 +3,13 @@ import { useFetchMovies } from "../../hooks/fetchMovies/useFetchMovies";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";
 import MoviesRow from "../../components/MoviesRow";
+import Recommendation from "./Recommendation";
 import { useParams } from "react-router-dom";
+import SimilarMovies from "./SimilarMovies";
 import DetailsBanner from "./DetailsBanner";
 import VideoSection from "./VideoSection";
 import "./MovieDetails.scss";
 import Cast from "./Cast";
-import SimilarMovies from "./SimilarMovies";
-import Recommendation from "./Recommendation";
 
 export default function MovieDetails() {
     const { id, mediaType } = useParams();

@@ -4,12 +4,12 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Select from "react-select";
 import { useFetchMovies } from "../../hooks/fetchMovies/useFetchMovies";
 import Spinner from "../../components/Spinner";
-import MovieCard from "../../components/MovieCard";
-import "./Explore.scss";
+import { ErrorMsg, SuccessMsg } from "../../helpers";
 import { BASE_URL, headers } from "../../utils/API";
+import MovieCard from "../../components/MovieCard";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import { ErrorMsg, SuccessMsg } from "../../helpers";
+import "./Explore.scss";
 
 const sortbyData = [
     { value: "popularity.desc", label: "Popularity Descending" },

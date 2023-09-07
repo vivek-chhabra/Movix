@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import MoviesRow from "../../components/MoviesRow";
 import { useFetchMovies } from "../../hooks/fetchMovies/useFetchMovies";
+import MoviesRow from "../../components/MoviesRow";
+import React, { useEffect } from "react";
 
 export default function SimilarMovies({ mediaType, id }) {
     const { error, isPending, movies, fetchMovies } = useFetchMovies();

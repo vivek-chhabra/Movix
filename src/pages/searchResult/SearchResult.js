@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import "./SearchResult.scss";
 import { useFetchMovies } from "../../hooks/fetchMovies/useFetchMovies";
-import { useParams } from "react-router-dom";
-import Spinner from "../../components/Spinner";
-import SearchCard from "./SearchCard";
-import noResult from "../../assets/no-results.png";
-import axios from "axios";
-import { BASE_URL, headers } from "../../utils/API";
-import { ErrorMsg } from "../../helpers";
-import { useSelector } from "react-redux";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { BASE_URL, headers } from "../../utils/API";
+import React, { useEffect, useState } from "react";
+import noResult from "../../assets/no-results.png";
+import Spinner from "../../components/Spinner";
+import { useParams } from "react-router-dom";
 import { SuccessMsg } from "../../helpers";
+import { useSelector } from "react-redux";
+import { ErrorMsg } from "../../helpers";
+import SearchCard from "./SearchCard";
+import "./SearchResult.scss";
+import axios from "axios";
 
 export default function SearchResult() {
     const { query } = useParams();

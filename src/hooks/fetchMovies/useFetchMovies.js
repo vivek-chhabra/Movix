@@ -1,6 +1,6 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
 import { BASE_URL, headers } from "../../utils/API";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export const useFetchMovies = () => {
     const [error, setError] = useState(null);

@@ -1,9 +1,9 @@
+import noPoster from "../assets/no-poster.png";
+import { useNavigate } from "react-router-dom";
+import RatingsCircle from "./RatingsCircle";
 import React from "react";
 import "./MovieCard.scss";
-import noPoster from "../assets/no-poster.png";
 import dayjs from "dayjs";
-import RatingsCircle from "./RatingsCircle";
-import { useNavigate } from "react-router-dom";
 
 export default function MovieCard({ movie, url, mediaType }) {
     const navigate = useNavigate();

@@ -1,8 +1,8 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { moviesReducer } from "../slice/moviesSlice";
-import { apiConfigReducer } from "../slice/ApiConfigSlice";
-import { homeReducer } from "../slice/homeSlice";
 import { creditsReducer, videosReducer } from "../slice/movieDetailsSlice";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { apiConfigReducer } from "../slice/ApiConfigSlice";
+import { moviesReducer } from "../slice/moviesSlice";
+import { homeReducer } from "../slice/homeSlice";
 
 // combining reducers
 const rootReducer = combineReducers({
