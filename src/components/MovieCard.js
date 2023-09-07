@@ -8,8 +8,6 @@ import { useNavigate } from "react-router-dom";
 export default function MovieCard({ movie, url, mediaType }) {
     const navigate = useNavigate();
 
-    console.log('movie card', movie)
-
     const imgURL = movie.poster_path ? url.poster + movie.poster_path : noPoster;
 
     return (

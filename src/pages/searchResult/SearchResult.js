@@ -10,6 +10,7 @@ import { BASE_URL, headers } from "../../utils/API";
 import { ErrorMsg } from "../../helpers";
 import { useSelector } from "react-redux";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { SuccessMsg } from "../../helpers";
 
 export default function SearchResult() {
     const { query } = useParams();
@@ -88,9 +89,9 @@ export default function SearchResult() {
                             </InfiniteScroll>
                         </>
                     ) : (
-                        <ErrorMsg error={error} />
+                        <SuccessMsg msg='No such result found for the search query' />
                     )}
-                </div>
+                </div>  
             )}
         </div>
     );

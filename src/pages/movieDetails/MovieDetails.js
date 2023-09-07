@@ -25,13 +25,13 @@ export default function MovieDetails() {
 
     return (
         <div className="MovieDetails">
-            {success && creSuccess && <DetailsBanner video={vidDetails?.data?.results[0]} crew={creDetails?.data?.crew} />}
-                <div className="main-content flex-col">
-                    <Cast data={creDetails?.data?.cast} isPending={crePending} />
-                    <VideoSection data={vidDetails?.data} isPending={isPending} />
-                    <SimilarMovies id={id} mediaType={mediaType} />
-                    <Recommendation id={id} mediaType={mediaType} />
-                </div>
+            {success && creSuccess && <DetailsBanner video={vidDetails?.data?.results[vidDetails?.data?.results?.length - 1]} crew={creDetails?.data?.crew} />}
+            <div className="main-content flex-col">
+                <Cast data={creDetails?.data?.cast} isPending={crePending} />
+                <VideoSection data={vidDetails?.data} isPending={isPending} />
+                <SimilarMovies id={id} mediaType={mediaType} />
+                <Recommendation id={id} mediaType={mediaType} />
+            </div>
         </div>
     );
 }

@@ -6,6 +6,19 @@
     min-height: 70rem;
     padding-top: 10rem;
     padding-inline: 2rem;
+
+    .container {
+        .success {
+            strong {
+                display: none;
+            }
+
+            background-color: lighten($secondary-bg-2, 80);
+            font-weight: 600;
+            font-size: 1.7rem;
+            padding: 1rem 1.5rem;
+        }
+    }
     
     .pageTitle {
         font-size: 2.4rem;

@@ -12,7 +12,6 @@
     width: 100%;
     top: 0;
 
-    
     &.show-nav {
         background-color: $secondary-bg-2;
     }
@@ -77,6 +76,13 @@
             color: white;
             justify-content: center;
             align-items: center;
+
+            .active {
+                color: lighten($pink, 30);
+                &::before {
+                    width: 100%;
+                }
+            }
 
             @include md {
                 @include responsiveness;

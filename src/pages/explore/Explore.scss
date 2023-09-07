@@ -1,0 +1,189 @@
+@import "../../styles/breakPoints";
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.explorePage {
+    min-height: 70rem;
+    padding: 0 3rem;
+    padding-top: 10rem;
+    font-size: 1.6rem;
+
+    .container {
+        & > .success {
+            strong {
+                display: none;
+            }
+
+            max-width: none;
+            background-color: lighten($secondary-bg-2, 80);
+            font-size: 1.7rem;
+            padding: 1rem 1.5rem;
+
+            @include md {
+                top: 4rem;
+            }
+        }
+
+        & > .error {
+            top: 18rem;
+
+            max-width: none;
+            font-size: 1.7rem;
+            padding: 1rem 1.5rem;
+
+            @include md {
+                top: 20rem;
+            }
+        }
+
+        .pageHeader {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2.5rem;
+            flex-direction: row;
+
+            @include md {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            @include sm {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            @include xs {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .pageTitle {
+                font-size: 2.4rem;
+                color: $main-text;
+                margin-bottom: 0;
+
+                @include md {
+                    text-align: center;
+                }
+
+                @include sm {
+                    text-align: center;
+                }
+
+                @include xs {
+                    text-align: center;
+                }
+            }
+            .filters {
+                display: flex;
+                gap: 1rem;
+                
+                @include md {
+                    flex-direction: column;
+                    width: 100%;
+                }
+                
+                @include sm {
+                    flex-direction: column;
+                }
+                
+                @include xs {
+                    flex-direction: column;
+                }
+    
+                .react-select-container {
+                    &.genresDD {
+                        min-width: 25rem;
+
+                        @include md {
+                            width: 100%;
+                        }
+
+                        @include sm {
+                            width: 100%;
+                        }
+
+                        @include xs {
+                            width: 100%;
+                        }
+                    }
+                    &.sortbyDD {
+                        flex-shrink: 0;
+                        width: 25rem;
+
+                        @include md {
+                            width: 100%;
+                        }
+
+                        @include sm {
+                            width: 100%;
+                        }
+
+                        @include xs {
+                            width: 100%;
+                        }
+                    }
+                    .react-select__control {
+                        border: 0;
+                        outline: 0;
+                        box-shadow: none;
+                        background-color: #2a405e;
+                        border-radius: 2rem;
+                        .react-select__value-container {
+                            .react-select__placeholder,
+                            .react-select__input-container {
+                                color: $main-text;
+                                margin: 0 1rem;
+                            }
+                        }
+                        .react-select__single-value {
+                            color: $main-text;
+                        }
+                        .react-select__multi-value {
+                            background-color: #3c5475;
+                            border-radius: 1rem;
+                            .react-select__multi-value__label {
+                                color: $main-text;
+                            }
+                            .react-select__multi-value__remove {
+                                background-color: transparent;
+                                color: $main-text;
+                                cursor: pointer;
+                                &:hover {
+                                    color: $main-bg;
+                                }
+                            }
+                        }
+                    }
+                    .react-select__menu {
+                        top: 4rem;
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+        .content {
+            display: flex;
+            flex-flow: row wrap;
+            margin-bottom: 5rem;
+            gap: 3rem;
+            row-gap: 5rem;
+            top: 0rem;
+
+            @include xs {
+                flex-direction: column;
+            }
+
+            .MovieCard {
+                .main-content {
+                    width: 21.6rem;
+
+                    .title {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
