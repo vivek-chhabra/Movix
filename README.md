@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+# Movix - 🎬📺
+**Movix is a dynamic web application that brings the world of movies and TV shows to your fingertips. Whether you're a cinephile looking for the latest releases or a TV buff eager to explore new series, Movix has you covered. This project harnesses the power of React, Redux Toolkit, SCSS, and JSX to deliver an immersive and user-friendly experience.**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br>
 
-## Available Scripts
+![07 09 2023_16 16 43_REC](https://github.com/vivek-chhabra/Movix/assets/105328667/c99391bf-791c-40c2-85ad-42fff66f4fa3)
 
-In the project directory, you can run:
+<br>
 
-### `npm start`
+## Features 🚀
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Search Movies and TV Shows** 🔍
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Browse Movies and TV Shows** 📽️
 
-### `npm test`
+- **View Movie/TV Show Details** ℹ️
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
 
-### `npm run build`
+## Technologies Used ⚛️🧰🎨
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React**
+- **Redux Toolkit**
+- **SCSS**
+- **TMDB**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## API Usage 🔑
 
-### `npm run eject`
+Movix uses the TMDb API to fetch movie and TV show data. You will need to obtain an API key from TMDb and add it to your `.env` file as mentioned in the "Getting Started" section.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<br>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project Structure 📂
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+movix/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── assets/
+│   │   └── ...
+│   ├── components/
+│   │   ├── MovieCard.js
+│   │   └── ...
+│   ├── hooks/
+│   │   ├── useFetchMovies.js
+│   ├── pages/
+│   │   ├── home/
+│   │   └── ...
+│   ├── redux/
+│   │   └── slice/
+│   │   └── store/
+│   ├── styles/
+│   │   ├── _variables.scss
+│   │   └── ...
+│   ├── utils/
+│   │   ├── API.js
+│   ├── App.js
+│   ├── index.js
+│   └── ...
+├── .env
+├── package.json
+└── ...
+```
