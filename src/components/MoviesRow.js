@@ -12,7 +12,7 @@ export default function MoviesRow({ categories, type, mediaType, typeUrl, id }) 
 
     useEffect(() => {
         if (typeUrl === "popular" || typeUrl === "top_rated") {
-            fetchMovies(`/${moviesActive ? categories[0] : categories[1]}/${typeUrl}/`);
+            fetchMovies(`/${moviesActive ? categories[0] : categories[1]}/${typeUrl}`);
         }
         if (typeUrl === "similar" || typeUrl === "recommendations") {
             setMoviesActive(mediaType === "movie");
