@@ -3,7 +3,7 @@
 
 <br>
 
->[Live Demo](movix-ten-blue.vercel.app)
+>[Live Demo](movix-ten-blue.vercel.app/)
 
 <br>
 
