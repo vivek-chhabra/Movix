@@ -32,7 +32,7 @@ const Explore = () => {
     const [genre, setGenre] = useState(null);
     const [sortby, setSortby] = useState(null);
     const { mediaType } = useParams();
-    const [filters, setFilters] = useState({})
+    const [filters, setFilters] = useState({});
 
     const { error: genErr, isPending, movies: genresData, fetchMovies } = useFetchMovies();
     const { url } = useSelector((data) => data.home);
@@ -57,26 +57,28 @@ const Explore = () => {
     };
 
     const fetchMore = async () => {
-        setError(null);
-        setLoading(false);
-        try {
-            setLoading(true);
-            let res = await axios(BASE_URL + `/discover/${mediaType}?page=${pageNum}`, {
-                headers,
-                filters,
-            });
+        setTimeout(async () => {
+            setError(null);
             setLoading(false);
-            if (res?.data?.results) {
-                setData({ ...data, results: [...data.results, ...res?.data?.results] });
-            } else {
-                setData(res);
+            try {
+                setLoading(true);
+                let res = await axios(BASE_URL + `/discover/${mediaType}?page=${pageNum}`, {
+                    headers,
+                    filters,
+                });
+                setLoading(false);
+                if (res?.data?.results) {
+                    setData({ ...data, results: [...data.results, ...res?.data?.results] });
+                } else {
+                    setData(res);
+                }
+                setPageNum(pageNum + 1);
+            } catch (err) {
+                setLoading(false);
+                console.log(err.message);
+                setError(err.message);
             }
-            setPageNum(pageNum + 1);
-        } catch (err) {
-            setLoading(false);
-            console.log(err.message);
-            setError(err.message);
-        }
+        }, 3000);
     };
 
     useEffect(() => {
@@ -96,11 +98,9 @@ const Explore = () => {
         if (action.name === "sortby") {
             setSortby(selectedItems);
             if (action.action !== "clear") {
-                // filters.sort_by = selectedItems.value;
-                setFilters({...filters, sort_by: selectedItems.value})
+                setFilters({ ...filters, sort_by: selectedItems.value });
             } else {
-                // delete filters.sort_by;
-                setFilters({...filters, sort_by: ''})
+                setFilters({ ...filters, sort_by: "" });
             }
         }
 
@@ -109,11 +109,9 @@ const Explore = () => {
             if (action.action !== "clear") {
                 let genreId = selectedItems.map((g) => g.id);
                 genreId = JSON.stringify(genreId).slice(1, -1);
-                // filters.with_genres = genreId;
-                setFilters({...filters, with_genres: genreId})
+                setFilters({ ...filters, with_genres: genreId });
             } else {
-                // delete filters.with_genres;
-                setFilters({...filters, with_genres: ''})
+                setFilters({ ...filters, with_genres: "" });
             }
         }
 
@@ -124,7 +122,7 @@ const Explore = () => {
     return (
         <div className="explorePage">
             <div className="container flex-col">
-                {error && <ErrorMsg error={error}/>}
+                {error && <ErrorMsg error={error} />}
                 <div className="pageHeader">
                     <div className="pageTitle">{mediaType === "tv" ? "Explore TV Shows" : "Explore Movies"}</div>
                     <div className="filters">
@@ -144,20 +142,18 @@ const Explore = () => {
                         <Select name="sortby" value={sortby} options={sortbyData} onChange={onChange} isClearable={true} placeholder="Sort by" className="react-select-container sortbyDD" classNamePrefix="react-select" />
                     </div>
                 </div>
-                {!loading && (
-                    <>
-                        {data?.results?.length > 0 ? (
-                            <InfiniteScroll className="content" dataLength={data?.results?.length || []} next={fetchMore} hasMore={pageNum <= data?.total_pages} loader={<Spinner initial={true} />}>
-                                {data?.results?.map((item, index) => {
-                                    if (item.media_type === "person") return;
-                                    return <MovieCard key={index} movie={item} mediaType={mediaType} url={url} />;
-                                })}
-                            </InfiniteScroll>
-                        ) : (
-                            <SuccessMsg msg="No such result found" />
-                        )}
-                    </>
-                )}
+                <>
+                    {data?.results?.length > 0 ? (
+                        <InfiniteScroll className="content" dataLength={data?.results?.length || []} next={fetchMore} hasMore={pageNum <= data?.total_pages} loader={<Spinner initial={true} />}>
+                            {data?.results?.map((item, index) => {
+                                if (item.media_type === "person") return;
+                                return <MovieCard key={index} movie={item} mediaType={mediaType} url={url} />;
+                            })}
+                        </InfiniteScroll>
+                    ) : (
+                        <SuccessMsg msg="No such result found" />
+                    )}
+                </>
             </div>
         </div>
     );

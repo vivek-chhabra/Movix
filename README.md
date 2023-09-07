@@ -1,4 +1,4 @@
-# Movix - 🎬📺
+# Movix - 🎬
 **Movix is a dynamic web application that brings the world of movies and TV shows to your fingertips. Whether you're a cinephile looking for the latest releases or a TV buff eager to explore new series, Movix has you covered. This project harnesses the power of React, Redux Toolkit, SCSS, and JSX to deliver an immersive and user-friendly experience.**
 
 <br>

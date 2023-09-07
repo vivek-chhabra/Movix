@@ -3,6 +3,8 @@
 @import "../styles/mixin";
 
 .MovieCard {
+    cursor: pointer;
+    
     .img {
         height: 32.5rem;
         border-radius: 1rem;
